@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import "../src/App.css";
 import GitButton from "../components/ButtonGithub";
+import Info from "./Info";
 import { useState } from "react";
 export default function App() {
   const [active, setActive] = useState("work");
@@ -30,7 +31,7 @@ export default function App() {
       </svg>
 
       {/* Header/Navigation */}
-      <header className="fixed top-5 w-full z-50 backdrop-blur-sm border-gray-800 ">
+      <header className="fixed top-5 w-full z-50  border-gray-800 ">
         <nav className="w-full px-2 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 w-full">
             {/* Left Section - Logo/Name */}
@@ -55,11 +56,11 @@ export default function App() {
             </div>
 
             {/* Center Section - Toggle Button */}
-            <div className="flex justify-center flex-1">
-              <div className="relative flex rounded-full bg-[#323232] p-1.5 ">
+            <div className="flex justify-center flex-1 ">
+              <div className="relative flex rounded-full bg-[#323232]/35 backdrop-blur-sm shadow-lg p-1.5 ">
                 {/* Slider animado */}
                 <div
-                  className={`absolute h-[80%] w-1/2 rounded-full bg-[#3E3E3E] transition-transform duration-300 ease-in-out ${
+                  className={`absolute h-[80%] w-1/2 rounded-full bg-[#3E3E3E]/60 backdrop-blur-3xl transition-transform duration-450 ease-in-out ${
                     active === "info" ? "translate-x-full" : "translate-x-2"
                   }`}
                   style={{ top: "10%", left: "-2%" }}
@@ -71,7 +72,7 @@ export default function App() {
                   className={`relative z-10 flex-1 px-6 py-2 text-sm font-medium transition-colors ${
                     active === "work"
                       ? "text-white"
-                      : "text-gray-400 hover:text-white cursor-pointer"
+                      : "text-white hover:text-white cursor-pointer"
                   }`}
                 >
                   Work
@@ -83,7 +84,7 @@ export default function App() {
                   className={`relative z-10 flex-1 px-6 py-2 text-sm font-medium transition-colors ${
                     active === "info"
                       ? "text-white"
-                      : "text-gray-400 hover:text-white cursor-pointer"
+                      : "text-white hover:text-white cursor-pointer"
                   }`}
                 >
                   Info
@@ -95,8 +96,10 @@ export default function App() {
             <div className="flex items-center justify-end space-x-6 pr-6 ">
               <a
                 style={{ fontFamily: "Neue Montreal", fontWeight: 550 }}
-                href="#"
-                className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors  "
+                href="https://www.linkedin.com/in/ldavidsantiago"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors"
               >
                 <span className="text-sm lg:text-[14px] ">LinkedIn</span>
                 <ExternalLink size={12} />
@@ -116,21 +119,27 @@ export default function App() {
 
       {/* Main Content Area */}
       <div className="pt-24 px-6 items-center justify-center flex flex-col">
-        <h1
-          style={{
-            fontFamily: "Neue Montreal",
-            fontWeight: "900",
-            fontSize: 40,
-          }}
-          className="pt-20 text-glow"
-        >
-          This is is under construction right now 😉.
-        </h1>
+        {active === "work" ? (
+          <>
+            <h1
+              style={{
+                fontFamily: "Neue Montreal",
+                fontWeight: "900",
+                fontSize: 40,
+              }}
+              className="pt-20 text-glow"
+            >
+              This is is under construction right now 😉.
+            </h1>
 
-        <img
-          src="https://media1.tenor.com/m/N1Hgl4qMR30AAAAd/mxstery.gif"
-          className="w-96 h-96 pt-6"
-        />
+            <img
+              src="https://media1.tenor.com/m/N1Hgl4qMR30AAAAd/mxstery.gif"
+              className="w-96 h-96 pt-6"
+            />
+          </>
+        ) : (
+          <Info />
+        )}
       </div>
     </div>
   );
