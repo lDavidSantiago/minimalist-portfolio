@@ -60,7 +60,7 @@ export default function App() {
               <div className="relative flex rounded-full bg-[#323232]/35 backdrop-blur-sm shadow-lg p-1.5 ">
                 {/* Slider animado */}
                 <div
-                  className={`absolute h-[80%] w-1/2 rounded-full bg-[#3E3E3E]/60 backdrop-blur-3xl transition-transform duration-450 ease-in-out ${
+                  className={`absolute h-[80%] w-1/2 rounded-full bg-[#3E3E3E]/10 backdrop-blur-3xl transition-transform duration-450 ease-in-out ${
                     active === "info" ? "translate-x-full" : "translate-x-2"
                   }`}
                   style={{ top: "10%", left: "-2%" }}
@@ -96,7 +96,7 @@ export default function App() {
             <div className="flex items-center justify-end space-x-6 pr-6 ">
               <a
                 style={{ fontFamily: "Neue Montreal", fontWeight: 550 }}
-                href="https://www.linkedin.com/in/ldavidsantiago"
+                href="https://www.linkedin.com/in/ldavidsantiago/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors"
