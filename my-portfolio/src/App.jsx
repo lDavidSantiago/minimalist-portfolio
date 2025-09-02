@@ -124,7 +124,7 @@ export default function App() {
           }}
           className="pt-20 text-glow"
         >
-          This is is under construction right now 😉
+          This is is under construction right now 😉.
         </h1>
 
         <img
